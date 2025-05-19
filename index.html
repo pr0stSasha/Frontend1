@@ -88,18 +88,20 @@
 
   <section id="contact" class="section">
     <div class="container">
-      <h2>Мои контакты</h2>
-      <div class="simple-contact">
-        <a href="mailto:alyaosipova2709@gmail.com" class="contact-btn email">
-          📧 Почта
-        </a>
-        <a href="https://vk.com/pr0st.sasha" class="contact-btn vk" target="_blank">
-          🔵 ВКонтакте
-        </a>
-        <a href="https://t.me/pr0st_sasha" class="contact-btn tg" target="_blank">
-          ✈️ Telegram
-        </a>
-      </div>
+      <h2>Связаться со мной</h2>
+      <form id="contactForm">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Сообщение</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Отправить</button>
+      </form>
+      <p id="formStatus"></p>
     </div>
   </section>
 </main>
