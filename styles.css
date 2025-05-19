@@ -1,0 +1,339 @@
+/* Общие настройки */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem);
+  color: #5a2a4d;
+  line-height: 1.5;
+  margin: 0;
+  background-color: #fff0f6;
+  user-select: text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Контейнер для контента */
+
+.container {
+  width: min(90%, 900px);
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* Хедер */
+
+header {
+  background-color: #fce4ec;
+  border-bottom: 2px solid #db5b8b;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px rgba(219, 91, 139, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #db5b8b;
+  flex-shrink: 0;
+}
+
+header h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.5rem, 2vw + 1rem, 2.2rem);
+  color: #db5b8b;
+  margin: 0;
+  flex-grow: 1;
+}
+
+header p {
+  color: #a63968;
+  font-weight: 500;
+  margin: 0 0 0 0.5rem;
+  white-space: nowrap;
+}
+
+/* Навигация */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #db5b8b;
+  font-weight: 600;
+  font-size: clamp(0.85rem, 1vw + 0.3rem, 1rem);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  background-color: #db5b8b;
+  color: #fff;
+  outline: none;
+}
+
+/* Секции */
+
+.section {
+  background-color: #fff;
+  border: 2px solid #db5b8b;
+  border-radius: 10px;
+  padding: 1.5rem 1.8rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 8px rgba(219, 91, 139, 0.15);
+  transition: box-shadow 0.3s ease;
+
+  /* Отступ для якорей под фиксированным хедером */
+  scroll-margin-top: 70px;
+}
+
+.section:hover {
+  box-shadow: 0 8px 16px rgba(219, 91, 139, 0.3);
+}
+
+/* Заголовки секций */
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.8rem);
+  color: #db5b8b;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(219, 91, 139, 0.4);
+}
+
+/* Списки навыков и достижений */
+.skills-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* чтобы на мобильных переходило в столбец */
+}
+
+.skills-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.skills-img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(219, 91, 139, 0.2);
+  border: 2px solid #db5b8b;
+  object-fit: cover;
+}
+
+.skills-list,
+.achievements-list {
+  list-style-type: disc;
+  padding-left: 1.3rem;
+  margin: 0;
+  color: #5a2a4d;
+  font-size: clamp(1rem, 1vw + 0.3rem, 1.1rem);
+}
+
+.skills-list li,
+.achievements-list li {
+  margin-bottom: 0.6rem;
+}
+
+/* Таймлайн образования */
+
+/* Таймлайн - только измененный цвет ветки */
+.timeline {
+  position: relative;
+  padding-left: 50px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #db5b8b; /* Новый цвет ветки - сине-фиолетовый */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -40px;
+  top: 35px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #db5b8b; /* Цвет точек такой же как ветка */
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #db5b8b;
+}
+
+.timeline-content {
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.timeline-content h3 {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.5vw + 0.5rem, 1.6rem);
+  color: #a63968;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 1px rgba(166, 57, 104, 0.3);
+}
+
+.timeline-content p {
+  margin: 3px 0;
+  color: #5a2a4d;
+}
+
+/* Проекты */
+
+.project {
+  margin-bottom: 1.5rem;
+}
+
+.project h3 {
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.5vw + 0.5rem, 1.6rem);
+  color: #a63968;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 1px 1px rgba(166, 57, 104, 0.3);
+}
+
+/* Кнопки проектов */
+
+.project-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #db5b8b;
+  color: #fff;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(219, 91, 139, 0.4);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(1rem, 1vw + 0.3rem, 1.1rem);
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #a63968;
+  box-shadow: 0 4px 12px rgba(166, 57, 104, 0.6);
+  outline: none;
+}
+
+/* Контакты */
+
+#contact p {
+  font-size: clamp(1rem, 1vw + 0.3rem, 1.1rem);
+  color: #5a2a4d;
+}
+
+#contact a {
+  color: #d94f8b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#contact a:hover,
+#contact a:focus {
+  color: #a63766;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Футер */
+
+footer {
+  background-color: #fce4ec;
+  border-top: 2px solid #db5b8b;
+  padding: 1rem 0;
+  text-align: center;
+  color: #a63968;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1vw + 0.2rem, 1rem);
+  box-shadow: 0 -2px 8px rgba(219, 91, 139, 0.1);
+}
+
+/* Плавные переходы для текста и кнопок */
+
+p,
+.skills-list li,
+.achievements-list li,
+.timeline-content p,
+a,
+h2,
+.timeline-content h3,
+.project h3,
+.btn {
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Адаптивность для мобильных */
+
+@media (max-width: 480px) {
+  .header-content {
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  header h1 {
+    flex-grow: 0;
+    font-size: 1.6rem;
+  }
+
+  header p {
+    margin: 0;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .btn {
+    padding: 0.4em 1em;
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+}
